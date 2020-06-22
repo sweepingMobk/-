@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" value="" >
+	<script>
+		var newtime = new Date("2020-04-21 01:00:00")
+		var time = new Date
+		var timenew =Math.abs(newtime.getFullYear()-time.getFullYear())//年
+		var timeyue = Math.abs((newtime.getMonth()+1)-(time.getMonth()+1))//月
+		var timetian = Math.abs(newtime.getDate()-time.getDate())//日
+		var timeshi = Math.abs(newtime.getHours()-time.getHours())//时
+		var timefen = Math.abs(newtime.getMinutes()-time.getMinutes())//分
+		var zonghe =timenew+"年零" +timeyue+"月"+timetian+"天"+timeshi+"时"+timefen+"分前发布的"
+		document.querySelector("input").value=zonghe
+		if(newtime>time){
+			alert("请输入正确日期")
+			document.querySelector("input").value="请输入正确日期"
+		}else{
+			
+		}
+		
+		if(timenew==0){
+			zonghe=timeyue+"月"+timetian+"天"+timeshi+"时"+timefen+"分前发布的"
+			document.querySelector("input").value=zonghe
+		}
+		if(timeyue==0){
+			zonghe=timenew+"年零"+timetian+"天"+timeshi+"时"+timefen+"分前发布的"
+			document.querySelector("input").value=zonghe
+		}
+		if(timetian==0){
+			zonghe=timenew+"年零"+timeyue+"个月"+timeshi+"时"+timefen+"分前发布的"
+			document.querySelector("input").value=zonghe
+		}
+		if(timeshi==0){
+			zonghe=timenew+"年零"+timeyue+"个月"+timetian+"天"+timefen+"分前发布的"
+			document.querySelector("input").value=zonghe
+		}
+		if(timefen==0){
+			document.querySelector("input").value="刚刚发布的"
+		}
+		//有瑕疵  当月份大于六的时候   就会出现一个小bug就会那大数减小数
+		//我需要以前时间的月份大于当前时间的月份的时候   以前时间年份减一 然后xxx
+	</script>
+</body>
+</html>
+
